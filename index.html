@@ -517,7 +517,15 @@
     // 1. Firebase 初期化 ＆ 状態変数
     // =========================================================================
     const appId = typeof __app_id !== 'undefined' ? __app_id : 'live-quiz-default';
-    let firebaseConfig = null;
+    let firebaseConfig = {
+      apiKey: "AIzaSyC73IMqjuRgSq0fG8wxILLWfFMBfFpRRIpE",
+      authDomain: "realtime-quizeshow.firebaseapp.com",
+      projectId: "realtime-quizeshow",
+      storageBucket: "realtime-quizeshow.firebasestorage.app",
+      messagingSenderId: "641965081517",
+      appId: "1:641965081517:web:b7e7b5579886273f2cd724",
+      measurementId: "G-VW3T0JSFYL"
+    };
     try {
       if (typeof __firebase_config !== 'undefined' && __firebase_config) {
         firebaseConfig = JSON.parse(__firebase_config);
