@@ -81,7 +81,7 @@
       <div class="flex items-center gap-2">
         <span id="header-mode-badge" class="hidden text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200"></span>
         <span id="header-room-info" class="hidden text-xs sm:text-sm font-bold text-indigo-700 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100"></span>
-        <button id="sound-toggle-btn" title="効果音のオン/オフ" class="p-2 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition">
+        <button id="sound-toggle-btn" title="効果音のオン/オフ" class="p-2 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition cursor-pointer">
           <svg id="icon-sound-on" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
           <svg id="icon-sound-off" class="w-5 h-5 hidden text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path></svg>
         </button>
@@ -98,8 +98,8 @@
       <h3 id="confirm-modal-title" class="text-lg font-bold text-slate-900 mb-2">確認</h3>
       <p id="confirm-modal-msg" class="text-sm text-slate-600 mb-6 leading-relaxed"></p>
       <div class="flex justify-end gap-3">
-        <button id="confirm-modal-cancel" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition">キャンセル</button>
-        <button id="confirm-modal-ok" class="px-4 py-2 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition">実行する</button>
+        <button id="confirm-modal-cancel" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition cursor-pointer">キャンセル</button>
+        <button id="confirm-modal-ok" class="px-4 py-2 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition cursor-pointer">実行する</button>
       </div>
     </div>
   </div>
@@ -127,9 +127,9 @@
         </p>
       </div>
 
-<div id="landing-cards-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- 主催者カード -->
-        <div id="landing-host-card" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
           <div>
             <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -146,7 +146,7 @@
         </div>
 
         <!-- 参加者カード -->
-        <div id="landing-player-card" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
           <div>
             <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
@@ -163,21 +163,6 @@
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-600 mb-1">チーム名（またはニックネーム）</label>
-                <input type="text" id="input-team-name" maxlength="16" placeholder="例: Aチーム / 営業部"
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none text-sm font-medium" />
-              </div>
-            </div>
-          </div>
-          <button id="btn-join-room" class="w-full py-3.5 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base shadow-sm transition cursor-pointer">
-            クイズに参加する
-          </button>
-          <div id="landing-show-host-wrap" class="hidden mt-4 pt-3 border-t border-slate-100 text-center">
-            <button id="btn-show-host-card" type="button" class="text-xs text-slate-400 hover:text-slate-600 underline cursor-pointer">
-              主催者として新しいルームを作成する場合はこちら
-            </button>
-          </div>
-        </div>
-      </div>                <label class="block text-xs font-bold text-slate-600 mb-1">チーム名（またはニックネーム）</label>
                 <input type="text" id="input-team-name" maxlength="16" placeholder="例: Aチーム / 営業部"
                   class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none text-sm font-medium" />
               </div>
@@ -245,9 +230,7 @@
                   + テスト用ダミーチーム追加
                 </button>
               </div>
-              <div id="host-team-list" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 min-h-[110px] content-start">
-                <!-- チームバッジがここに並ぶ -->
-              </div>
+              <div id="host-team-list" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 min-h-[110px] content-start"></div>
             </div>
 
             <!-- 問題セット ＆ 開始コントロール -->
@@ -365,7 +348,6 @@
           <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mb-2">最終結果発表！</h2>
           <p id="host-final-subtitle" class="text-sm text-slate-500 mb-6">下位から順番に発表します！</p>
 
-          <!-- ステップ演出コントロール -->
           <div id="host-final-controls" class="flex flex-wrap items-center justify-center gap-3 mb-7">
             <button id="btn-reveal-next-rank" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-sm sm:text-base shadow-sm transition cursor-pointer">
               次の順位を発表する
@@ -532,6 +514,8 @@
     // 1. Firebase 初期化 ＆ 状態変数
     // =========================================================================
     const appId = typeof __app_id !== 'undefined' ? __app_id : 'live-quiz-default';
+
+    // ここにFirebaseのWebアプリ設定値を入力してください
     let firebaseConfig = {
       apiKey: "AIzaSyC73IMqjuRgSq0fG8wxILLWfFMbFpRRIpE",
       authDomain: "realtime-quizeshow.firebaseapp.com",
@@ -541,6 +525,7 @@
       appId: "1:641965081517:web:b7e7b5579886273f2cd724",
       measurementId: "G-VW3T0JSFYL"
     };
+
     try {
       if (typeof __firebase_config !== 'undefined' && __firebase_config) {
         firebaseConfig = JSON.parse(__firebase_config);
@@ -555,11 +540,9 @@
     let currentUser = null;
     let isOfflineFallback = false;
 
-    // 同一ブラウザ内タブ間リアルタイム同期用 (BroadcastChannel + メモリ/セッションフォールバック)
     const bc = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('livequiz_local_sync') : null;
     const memoryStore = {};
 
-    // 効果音システム (Web Audio API)
     let soundEnabled = true;
     let audioCtx = null;
 
@@ -617,15 +600,12 @@
       }
     }
 
-    // =========================================================================
-    // 2. アプリケーション状態管理
-    // =========================================================================
     const CHOICE_LABELS = ['A', 'B', 'C', 'D'];
     const CHOICE_COLORS = [
-      { bg: 'bg-rose-500', hover: 'hover:bg-rose-600', light: 'bg-rose-50 border-rose-200 text-rose-800', badge: 'bg-rose-600' },
-      { bg: 'bg-sky-500', hover: 'hover:bg-sky-600', light: 'bg-sky-50 border-sky-200 text-sky-800', badge: 'bg-sky-600' },
-      { bg: 'bg-amber-500', hover: 'hover:bg-amber-600', light: 'bg-amber-50 border-amber-200 text-amber-800', badge: 'bg-amber-600' },
-      { bg: 'bg-emerald-500', hover: 'hover:bg-emerald-600', light: 'bg-emerald-50 border-emerald-200 text-emerald-800', badge: 'bg-emerald-600' }
+      { bg: 'bg-rose-500', hover: 'hover:bg-rose-600' },
+      { bg: 'bg-sky-500', hover: 'hover:bg-sky-600' },
+      { bg: 'bg-amber-500', hover: 'hover:bg-amber-600' },
+      { bg: 'bg-emerald-500', hover: 'hover:bg-emerald-600' }
     ];
 
     const DEFAULT_QUESTIONS = [
@@ -656,7 +636,7 @@
     ];
 
     let state = {
-      role: null, // 'host' | 'player'
+      role: null,
       roomId: null,
       teamId: null,
       teamName: null,
@@ -675,9 +655,6 @@
     let unsubTeams = null;
     let unsubAnswers = null;
 
-    // =========================================================================
-    // 3. UIヘルパー関数
-    // =========================================================================
     function showToast(msg, type = 'info') {
       const container = document.getElementById('toast-container');
       const el = document.createElement('div');
@@ -731,9 +708,6 @@
       }[m]));
     }
 
-    // =========================================================================
-    // 4. データ永続化・同期抽象レイヤー（クラウド + ローカル自動切替）
-    // =========================================================================
     function getRoomDocRef(roomId) {
       return doc(db, 'artifacts', appId, 'public', 'data', 'quiz_rooms', `room_${roomId}`);
     }
@@ -750,7 +724,6 @@
       return doc(db, 'artifacts', appId, 'public', 'data', `quiz_answers_${roomId}`, docId);
     }
 
-    // ローカルモード用ヘルパー
     function getLocalRoomKey(roomId) { return `livequiz_room_${roomId}`; }
     function getLocalRoom(roomId) {
       if (memoryStore[roomId]) return memoryStore[roomId];
@@ -798,9 +771,12 @@
       else if (state.role === 'player') renderPlayerView();
     }
 
-    // =========================================================================
-    // 5. 初期化処理（確実にトップ画面を表示）
-    // =========================================================================
+    function hasValidFirebaseConfig(cfg) {
+      if (!cfg || !cfg.apiKey || !cfg.projectId) return false;
+      const invalidMarkers = ['ここに', 'YOUR_', 'example'];
+      return !invalidMarkers.some(marker => String(cfg.apiKey).includes(marker) || String(cfg.projectId).includes(marker));
+    }
+
     async function bootApp() {
       let booted = false;
       const finishBoot = () => {
@@ -814,28 +790,12 @@
           modeBadge.classList.remove('hidden');
         }
 
-       try {
+        try {
           const params = new URLSearchParams(window.location.search);
           const roomParam = params.get('room');
           if (roomParam) {
-            const cleanRoom = roomParam.replace(/\D/g, '').slice(0, 4);
             const inputEl = document.getElementById('input-join-room');
-            if (inputEl) inputEl.value = cleanRoom;
-
-            // QRコード（?room=xxxx）からのアクセス時は参加者専用レイアウトに切り替え
-            if (cleanRoom.length === 4) {
-              const hostCard = document.getElementById('landing-host-card');
-              const gridEl = document.getElementById('landing-cards-grid');
-              const playerCard = document.getElementById('landing-player-card');
-              const showHostWrap = document.getElementById('landing-show-host-wrap');
-              if (hostCard) hostCard.classList.add('hidden');
-              if (gridEl) gridEl.className = 'max-w-md mx-auto';
-              if (playerCard) playerCard.classList.add('ring-2', 'ring-emerald-500/30');
-              if (showHostWrap) showHostWrap.classList.remove('hidden');
-
-              const teamInput = document.getElementById('input-team-name');
-              if (teamInput) setTimeout(() => teamInput.focus(), 100);
-            }
+            if (inputEl) inputEl.value = roomParam.replace(/\D/g, '').slice(0, 4);
           }
         } catch (e) {}
       };
@@ -846,7 +806,7 @@
       }, 2000);
 
       try {
-        if (firebaseConfig && firebaseConfig.apiKey) {
+        if (hasValidFirebaseConfig(firebaseConfig)) {
           app = initializeApp(firebaseConfig);
           auth = getAuth(app);
           db = getFirestore(app);
@@ -870,9 +830,6 @@
       }
     }
 
-    // =========================================================================
-    // 6. ルーム作成（主催者）＆ ルーム参加（参加者）
-    // =========================================================================
     function generateRoomCode() {
       return String(Math.floor(1000 + Math.random() * 9000));
     }
@@ -976,7 +933,6 @@
           state.roomData = roomSnap.data();
           subscribeRoomData(roomInput);
         } else {
-          // ローカル同期モード
           if (bc) bc.postMessage({ type: 'REQUEST_ROOM', roomId: roomInput });
           await new Promise(r => setTimeout(r, 150));
           const bundle = getLocalRoom(roomInput);
@@ -1053,13 +1009,11 @@
       }
     }
 
-    // =========================================================================
-    // 7. 主催者画面レンダリング ＆ ゲーム進行ロジック
-    // =========================================================================
+    // QRコードの飛び先を参加者専用ページ join.html?room=xxxx に設定
     function renderHostLobbyQR(roomId) {
       document.getElementById('host-room-code').textContent = roomId;
-      const baseUrl = window.location.href.split('?')[0];
-      const joinUrl = `${baseUrl}?room=${roomId}`;
+      const baseDir = window.location.href.split('?')[0].replace(/[^/]*$/, '');
+      const joinUrl = `${baseDir}join.html?room=${roomId}`;
       document.getElementById('host-join-url').textContent = joinUrl;
 
       const qrContainer = document.getElementById('qrcode-container');
@@ -1225,9 +1179,7 @@
         if (remain <= 0) {
           clearInterval(state.timerInterval);
           state.timerInterval = null;
-          if (timerBox) {
-            timerBox.classList.remove('timer-urgent');
-          }
+          if (timerBox) timerBox.classList.remove('timer-urgent');
           if (state.roomData?.status === 'question' && state.roomData?.currentQuestionIndex === qIdx) {
             revealQuestionResult();
           }
@@ -1426,7 +1378,6 @@
       const ranked = [...state.teams].sort((a, b) => (b.score || 0) - (a.score || 0));
       const total = ranked.length;
 
-      // 初回表示時は下位から1チームずつ発表できるように初期化（1チームのみなら全表示）
       if (state.lastRenderedStatus !== 'finished') {
         state.lastRenderedStatus = 'finished';
         state.revealedRankCount = total <= 1 ? total : 1;
@@ -1436,13 +1387,11 @@
       const revealedCount = Math.min(total, Math.max(0, state.revealedRankCount));
       const allRevealed = revealedCount >= total;
 
-      // 発表対象は「最下位（total - 1）」から「1位（0）」に向かって revealedCount 件
       const startIndex = Math.max(0, total - revealedCount);
       const visibleItems = [];
       for (let idx = startIndex; idx < total; idx++) {
         visibleItems.push({ team: ranked[idx], rank: idx + 1, isFirst: idx === 0 });
       }
-      // 画面上は1位が上に来るように順位順で並べる（新しく公開された順位はアニメーション）
       visibleItems.sort((a, b) => a.rank - b.rank);
 
       const subtitleEl = document.getElementById('host-final-subtitle');
@@ -1507,9 +1456,6 @@
       }).join('');
     }
 
-    // =========================================================================
-    // 8. 参加者画面レンダリング ＆ 回答送信
-    // =========================================================================
     function hideAllPlayerStages() {
       ['player-stage-lobby', 'player-stage-question', 'player-stage-result', 'player-stage-finished'].forEach(id => {
         document.getElementById(id).classList.add('hidden');
@@ -1725,9 +1671,6 @@
       document.getElementById('player-final-score').textContent = `累計スコア: ${myTeam ? (myTeam.score || 0) : 0} pt`;
     }
 
-    // =========================================================================
-    // 9. 問題作成・編集モーダル (HOST EDITOR)
-    // =========================================================================
     function openQuestionEditor() {
       const currentQuestions = state.roomData?.questions || [];
       state.editorDraftQuestions = JSON.parse(JSON.stringify(currentQuestions));
@@ -1893,9 +1836,6 @@
       }
     }
 
-    // =========================================================================
-    // 10. イベントリスナー登録
-    // =========================================================================
     document.getElementById('nav-home-btn').onclick = () => {
       if (!state.role) return;
       showConfirm('トップ画面へ戻る', '現在のルームから退出してトップ画面に戻りますか？', () => {
@@ -1918,14 +1858,6 @@
 
     document.getElementById('btn-create-room').onclick = createRoom;
     document.getElementById('btn-join-room').onclick = joinRoom;
-    document.getElementById('btn-show-host-card').onclick = () => {
-      const hostCard = document.getElementById('landing-host-card');
-      const gridEl = document.getElementById('landing-cards-grid');
-      const showHostWrap = document.getElementById('landing-show-host-wrap');
-      if (hostCard) hostCard.classList.remove('hidden');
-      if (gridEl) gridEl.className = 'grid grid-cols-1 md:grid-cols-2 gap-6';
-      if (showHostWrap) showHostWrap.classList.add('hidden');
-    };
 
     document.getElementById('btn-copy-url').onclick = () => {
       const urlText = document.getElementById('host-join-url').textContent;
@@ -2143,7 +2075,6 @@
       showToast('スコアをリセットしてロビーに戻りました', 'success');
     };
 
-    // アプリ起動
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', bootApp);
     } else {
